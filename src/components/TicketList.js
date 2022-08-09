@@ -13,7 +13,9 @@ class TicketList extends Component {
 
   componentDidMount() {
     axios
-      .get(`http://localhost:3005/api/tickets`, { mode: "cors" })
+      .get(`https://andrewticketapi.herokuapp.com/api/tickets`, {
+        mode: "cors",
+      })
       .then((res) => {
         const json = res.data;
         this.setState({ data: json });
