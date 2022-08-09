@@ -8,7 +8,7 @@ const Ticketpage = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3005/api/ticket/${props.id}`, {
+      .get(`https://andrewticketapi.herokuapp.com/api/ticket/${props.id}`, {
         mode: "cors",
       })
       .then((res) => {
