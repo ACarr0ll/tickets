@@ -6,9 +6,9 @@ const Homepage = () => (
     <p> This system is my way of practicing the MERN stack.</p>
     <h2>Planned features:</h2>
     <ul>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li>Create New Ticket</li>
+      <li>Delete Ticket</li>
+      <li>See a list of tickets</li>
     </ul>
   </>
 );

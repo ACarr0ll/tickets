@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Button } from "react-bootstrap";
+const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
 
 const Ticketpage = () => {
   const props = useParams();
   const [ticket, setTicket] = useState();
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -16,6 +19,17 @@ const Ticketpage = () => {
       });
   }, [props]);
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    axios
+      .delete(`${API_ENDPOINT}/api/ticket/delete/${props.id}`, {
+        mode: "cors",
+      })
+      .then((res) => {
+        navigate("/");
+      });
+  }
+
   if (!ticket) return <>No Ticket Available</>;
 
   return (
@@ -23,6 +37,9 @@ const Ticketpage = () => {
       <h1>Ticket {ticket.id}</h1>
       <p>{ticket.Subject}</p>
       <p>{ticket.Description}</p>
+      <form onSubmit={handleSubmit}>
+        <Button type="submit">Delete</Button>
+      </form>
     </>
   );
 };
