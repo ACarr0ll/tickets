@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
+const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
 class TicketList extends Component {
   constructor() {
     super();
@@ -13,7 +13,7 @@ class TicketList extends Component {
 
   componentDidMount() {
     axios
-      .get(`https://andrewticketapi.herokuapp.com/api/tickets`, {
+      .get(`${API_ENDPOINT}/api/tickets`, {
         mode: "cors",
       })
       .then((res) => {

@@ -11,7 +11,7 @@ const Ticketpage = () => {
 
   useEffect(() => {
     axios
-      .get(`https://andrewticketapi.herokuapp.com/api/ticket/${props.id}`, {
+      .get(`${API_ENDPOINT}/api/ticket/${props.id}`, {
         mode: "cors",
       })
       .then((res) => {
