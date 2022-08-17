@@ -33,14 +33,16 @@ const Ticketpage = () => {
   if (!ticket) return <>No Ticket Available</>;
 
   return (
-    <>
-      <h1>Ticket {ticket.id}</h1>
-      <p>{ticket.subject}</p>
-      <p>{ticket.description}</p>
-      <form onSubmit={handleSubmit}>
-        <Button type="submit">Delete</Button>
-      </form>
-    </>
+    <div className="container-fluid">
+      <div className="w-50 mx-auto">
+        <h1>Ticket {ticket.id}</h1>
+        <p>{ticket.subject}</p>
+        <p>{ticket.description}</p>
+        <form onSubmit={handleSubmit}>
+          <Button type="submit">Delete</Button>
+        </form>
+      </div>
+    </div>
   );
 };
 

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import uuid from "react-uuid";
+import Container from "react-bootstrap/Container";
 
 const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
 
@@ -26,7 +27,7 @@ const NewTicket = () => {
   };
 
   return (
-    <div>
+    <Container>
       <form onSubmit={sendTicket}>
         <div>
           <h1>Create a new Ticket!</h1>
@@ -57,7 +58,7 @@ const NewTicket = () => {
           <button type="submit">Submit</button>
         </div>
       </form>
-    </div>
+    </Container>
   );
 };
 
