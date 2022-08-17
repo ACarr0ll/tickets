@@ -12,7 +12,7 @@ import TicketList from "./components/TicketList";
 function App() {
   return (
     <Router>
-      <Container fluid>
+      <Container className="container-fluid text-center">
         <Navbar className="navbar navbar-expand-lg navbar-light bg-light" />
       </Container>
       <Routes>

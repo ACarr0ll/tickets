@@ -1,28 +1,27 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
+import { Nav } from "react-bootstrap";
 
 const Navbar = () => (
-  <Container
-    fluid
-    className="navbar navbar-expand-lg navbar-light bg-dark d-flex justify-content-center"
+  <Nav
+    activeKey="/home"
+    className="navbar navbar-expand-lg navbar-light bg-dark d-flex"
   >
-    <Link className="navbar-brand m-1 justify-content-start" to="/">
+    <Nav.Item>
       <span className="header">Andrew's Ticket System</span>
-    </Link>
-    <Link to="/">
-      <Button className="btn btn-secondary m-1">Home</Button>
-    </Link>
-
-    <Link to="/user">
-      <Button className="btn btn-secondary m-1">User</Button>
-    </Link>
-
-    <Link to="/tickets">
-      <Button className="btn btn-secondary m-1">Ticket List</Button>
-    </Link>
-  </Container>
+    </Nav.Item>
+    <Nav.Item>
+      <Nav.Link href="/">Home</Nav.Link>
+    </Nav.Item>
+    <Nav.Item>
+      <Nav.Link href="/user">Users</Nav.Link>
+    </Nav.Item>
+    <Nav.Item>
+      <Nav.Link href="/tickets">Tickets</Nav.Link>
+    </Nav.Item>
+    <Nav.Item>
+      <Nav.Link href="/ticket/new">Create a Ticket</Nav.Link>
+    </Nav.Item>
+  </Nav>
 );
 
 export default Navbar;
