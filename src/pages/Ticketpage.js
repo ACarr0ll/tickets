@@ -35,8 +35,8 @@ const Ticketpage = () => {
   return (
     <>
       <h1>Ticket {ticket.id}</h1>
-      <p>{ticket.Subject}</p>
-      <p>{ticket.Description}</p>
+      <p>{ticket.subject}</p>
+      <p>{ticket.description}</p>
       <form onSubmit={handleSubmit}>
         <Button type="submit">Delete</Button>
       </form>

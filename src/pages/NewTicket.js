@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import uuid from "react-uuid";
+
 const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
 
 const NewTicket = () => {
@@ -10,9 +12,11 @@ const NewTicket = () => {
 
   const sendTicket = (event) => {
     event.preventDefault();
+    const id = uuid();
     axios
       .post(`${API_ENDPOINT}/api/ticket/new`, {
         mode: "cors",
+        id: id,
         subject: subject,
         description: description,
       })

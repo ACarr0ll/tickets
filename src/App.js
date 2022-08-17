@@ -3,11 +3,11 @@ import Homepage from "./pages/Homepage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Userlist from "./pages/Userlist";
 import Ticketpage from "./pages/Ticketpage";
-import TicketList from "./components/TicketList";
 import NewTicket from "./pages/NewTicket";
 import Missing from "./pages/Missing";
 import Navbar from "./components/Navbar";
 import { Container } from "react-bootstrap";
+import TicketList from "./components/TicketList";
 
 function App() {
   return (
