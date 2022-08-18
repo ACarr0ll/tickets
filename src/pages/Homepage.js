@@ -6,13 +6,12 @@ import CardGroup from "react-bootstrap/CardGroup";
 const removeBullets = {
   listStyle: "none",
 };
-
+//Functional component
 const Homepage = () => (
-  <Container>
-    <div className="bg-light">
+  <Container className="justify-content-center">
+    <div style={{ height: "100vh" }} className="bg-white p-3 text-center">
       <h1 className="mr-auto">Hello, Welcome to my ticket system</h1>
       <p>
-        {" "}
         This system is my way of practicing the MERN stack. My goal is to create
         a complete ticketing system with functionality that helps speed up
         ticket solves and cohesion in a team
@@ -26,12 +25,13 @@ const Homepage = () => (
         aliquid odio officiis maxime repudiandae tenetur obcaecati doloribus
         voluptas architecto delectus quod accusantium?
       </p>
-      <CardGroup>
+      <CardGroup className="d-flex justify-content-center flex-nowrap">
         <Card
+          style={{ borderRadius: "10px" }}
           border="success"
           bg="success"
           text="white"
-          className="justify-content-center"
+          className="justify-content-center m-3"
         >
           <Card.Header as="h2">
             <div className="text-center">
@@ -46,11 +46,13 @@ const Homepage = () => (
             </ul>
           </Card.Text>
         </Card>
+
         <Card
+          style={{ borderRadius: "10px" }}
           border="danger"
           bg="danger"
           text="white"
-          className="justify-content-center"
+          className="justify-content-center m-3"
         >
           <Card.Header as="h2">
             <div className="text-center">

@@ -5,13 +5,13 @@ import Container from "react-bootstrap/Container";
 
 const Navigation = () => (
   <Navbar bg="primary" expand="lg" variant="dark" sticky="top">
-    <Container>
+    <Container className="d-flex justify-content-center">
       <Navbar.Brand href="/">
         <span className="text-white">Andrew's Ticket System</span>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="navigation" />
       <Navbar.Collapse id="navigation">
-        <Nav activeKey="/home" className="me-auto">
+        <Nav activeKey="/home" className="link-light">
           <Nav.Item>
             <Nav.Link href="/">Home</Nav.Link>
           </Nav.Item>

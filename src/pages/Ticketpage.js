@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Button } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
 const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
 
 const Ticketpage = () => {
@@ -33,8 +34,8 @@ const Ticketpage = () => {
   if (!ticket) return <>No Ticket Available</>;
 
   return (
-    <div className="container-fluid">
-      <div className="w-50 mx-auto">
+    <Container>
+      <div style={{ height: "100vh" }} className="bg-light p-3">
         <h1>Ticket {ticket.id}</h1>
         <p>{ticket.subject}</p>
         <p>{ticket.description}</p>
@@ -42,7 +43,7 @@ const Ticketpage = () => {
           <Button type="submit">Delete</Button>
         </form>
       </div>
-    </div>
+    </Container>
   );
 };
 

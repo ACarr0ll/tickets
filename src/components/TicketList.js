@@ -2,48 +2,51 @@ import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
+import { useLayoutEffect } from "react";
+import { useState } from "react";
 
 const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
 
-class TicketList extends React.Component {
-  constructor() {
-    super();
+const TicketList = () => {
+  const [tickets, setTickets] = useState([]);
 
-    this.state = {
-      data: [],
-    };
-  }
-
-  getTickets() {
+  const getTickets = () => {
     axios
       .get(`${API_ENDPOINT}/api/tickets`, {
         mode: "cors",
       })
       .then((res) => {
-        const json = res.data;
-        this.setState({ data: json });
+        console.log(res.data);
+        setTickets(res.data);
       });
-  }
+  };
 
-  componentDidMount() {
-    this.getTickets();
-  }
+  useLayoutEffect(() => {
+    getTickets();
+  }, []);
 
-  render() {
-    return (
-      <Container>
+  return (
+    <Container>
+      <div
+        style={{ height: "100vh", listStylePosition: "inside" }}
+        className="bg-light p-3 text-center"
+      >
         <ul>
-          {this.state.data.map((ticket) => (
+          {tickets.map((ticket) => (
             <li key={ticket._id}>
-              <Link to={`/ticket/${ticket.id}`} state={{ id: ticket.id }}>
+              <Link
+                className="link-dark"
+                to={`/ticket/${ticket.id}`}
+                state={{ id: ticket.id }}
+              >
                 {ticket.subject}
               </Link>
             </li>
           ))}
         </ul>
-      </Container>
-    );
-  }
-}
+      </div>
+    </Container>
+  );
+};
 
 export default TicketList;
